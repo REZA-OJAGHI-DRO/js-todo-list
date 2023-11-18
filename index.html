@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/stylesheet/global.css">
+    <link rel="stylesheet" href="assets/stylesheet/master.css">
+    <link rel="stylesheet" href="assets/boot/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/boot/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="col-12 d-flex justify-content-center align-items-center">
+        <article class="row p-0">
+            <div class="col-12 p-0">
+                <div></div>
+                <div id="day" class="d-flex justify-content-center align-items-center"></div>
+            </div>
+            <div class="col-12 d-flex p-2 px-3">
+                <input type="text" placeholder="Add item ..." class="col-10 px-2" id="input" maxlength="25">
+                <button id="todo"
+                    class="col-2 d-flex justify-content-center align-items-center p-0 pb-3">+</button>
+            </div>
+            <ul class="col-12 p-2 px-3" id="list"></ul>
+        </article>
+    </section>
+</body>
+<script>
+    let temp = document.getElementById('input')
+    document.getElementById('todo').addEventListener('click',()=>{
+        let inp = temp.value
+        if (
+            (inp == '') || (inp == ' ') || (inp == '\n') || (inp.length < 3) || (inp == null)
+        ) {
+            alert('Enter text')
+        } else {
+            let _li = document.createElement('li')
+            _li.classList.add('li1')
+            _li.innerHTML = `
+            <input onclick='_cek(this)' type="checkbox"/>
+            <h2><strong contenteditable>${inp}</strong><span></span></h2>
+            <button onclick='_del(this)'><i class="bi bi-trash3"></i></button>
+            `
+            document.getElementById('list').appendChild(_li)
+            temp.value = null
+            temp.focus()
+        }
+    })
+    
+    function _cek(s){
+        let _child= s.nextElementSibling.children
+        if(s.checked){
+           _child[1].style.width=('100%')
+        }else{
+            _child[1].style.width=('0%')
+        }
+    }
+
+    function _del(s){
+        s.parentElement.classList.add('li2')
+        setTimeout(() => {
+            
+            s.parentElement.remove()
+        }, 400);
+        
+    }
+
+
+
+    let flag = ''
+    _day = new Date()
+    switch (_day.getDay()) {
+        case 0:
+            flag = "sunday";
+            break;
+        case 1:
+            flag = "monday";
+            break;
+        case 2:
+            flag = "tuesday";
+            break;
+        case 3:
+            flag = "wednesday";
+            break;
+        case 4:
+            flag = "thursday";
+            break;
+        case 5:
+            flag = "friday";
+            break;
+        case 6:
+            flag = "saturday";
+            break;
+    }
+    document.getElementById('day').innerHTML = flag
+</script>
+
+</html>

@@ -1,0 +1,111 @@
+section {
+  height: 100vh;
+  background: radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%);
+}
+section > article {
+  overflow: hidden;
+  width: 450px;
+  height: 600px;
+  background-color: rgb(225, 224, 224);
+  box-shadow: 0 0 10px 3px black;
+}
+section > article > div:nth-of-type(1) {
+  height: 35%;
+  border: 1px solid black;
+  display: grid;
+}
+section > article > div:nth-of-type(1) > div {
+  grid-area: 1/1/2/2;
+}
+section > article > div:nth-of-type(1) > div:nth-of-type(1) {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/beautiful-images-of-nature-22-1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+section > article > div:nth-of-type(1) > div:nth-of-type(2) {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.427);
+  font-size: 3rem;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+}
+section > article > div:nth-of-type(2) {
+  height: 10%;
+}
+section > article > div:nth-of-type(2) > input {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 3px solid dimgray;
+  background-color: rgb(225, 224, 224);
+  font-size: 1.5rem;
+  font-family: "Oswald", sans-serif;
+}
+section > article > div:nth-of-type(2) > button {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 3px solid dimgray;
+  font-size: 3rem;
+  background-color: rgb(225, 224, 224);
+}
+section > article > ul {
+  height: 50%;
+  overflow: auto;
+}
+
+.li1 {
+  width: 100%;
+  height: 5vh;
+  border-bottom: 1px solid dimgray;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  color: dimgray;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+h2 {
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+  position: relative;
+}
+h2 > span {
+  position: absolute;
+  top: 48%;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background-color: red;
+  transition: 1s;
+}
+h2 > strong {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-bottom: 9px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+body > section > article > ul > li > button {
+  border: 0;
+  background-color: rgb(225, 224, 224);
+  color: red;
+}
+
+li {
+  transition: 0.4s;
+}
+
+.li2 {
+  transform: translateX(-100%);
+}/*# sourceMappingURL=master.css.map */
